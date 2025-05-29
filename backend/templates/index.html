@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Prescription Advisor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>AI Prescription Advisor</h1>
+
+    <section class="upload-section">
+      <h2>Upload Prescription</h2>
+      <input type="file" id="prescriptionInput" accept="image/*">
+      <button onclick="uploadPrescription()">Scan</button>
+    </section>
+
+    <section class="vitals-section">
+      <h2>Enter Your Vitals</h2>
+      <input type="text" id="bp" placeholder="Blood Pressure (e.g., 120/80)">
+      <input type="text" id="sugar" placeholder="Blood Sugar Level">
+      <input type="text" id="weight" placeholder="Weight (optional)">
+      <button onclick="submitVitals()">Get Advice</button>
+    </section>
+
+    <section id="results">
+      <h2>Extracted Information</h2>
+      <pre id="output"></pre>
+    </section>
+
+    <section id="advice">
+      <h2>Health Advice</h2>
+      <ul id="warnings"></ul>
+      <ul id="tips"></ul>
+    </section>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
